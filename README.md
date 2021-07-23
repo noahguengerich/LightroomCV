@@ -18,7 +18,7 @@ Not strictly required but greatly improves captioning performance by enabling GP
 
 1. Clone this repository to your local machine
 
-     `> git clone https://github.com/noahguengerich/LightroomCV
+     `> git clone https://github.com/noahguengerich/LightroomCV`
 
 2. Change directory to the captioner folder and install the conda environment:
 
