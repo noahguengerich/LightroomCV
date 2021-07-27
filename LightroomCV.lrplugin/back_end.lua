@@ -159,8 +159,6 @@ local received_message = 0
 
 -- Starts sending jpegs
 local function send_socket_send_jpegs(sender, propertyTable)
-  back_end.log("slider_accuracy: " .. propertyTable.slider_accuracy)
-  local accuracy = propertyTable.slider_accuracy
   local catalog = LrApplication.activeCatalog()
   local photos = nil
   local append = false
@@ -238,6 +236,7 @@ local function send_socket_send_jpegs(sender, propertyTable)
 
   local jpeg_request_counter
   local max_jpeg_request_tries = 3
+  local jpeg_timeout_counter
 
   -- Loop through selected photos
   for i, photo in ipairs(photos) do
@@ -246,7 +245,7 @@ local function send_socket_send_jpegs(sender, propertyTable)
     jpeg_request_counter = 0
     repeat
       jpeg_request_counter = jpeg_request_counter + 1
-      jpeg = request_jpeg(photo, accuracy)
+      jpeg = request_jpeg(photo, JPEG[2])
     until not (jpeg == nil) or jpeg_request_counter == 3
     if jpeg == nil then
       back_end.log("jpeg == nil")
@@ -257,8 +256,14 @@ local function send_socket_send_jpegs(sender, propertyTable)
 
       -- Wait for caption response from Python script
       -- receive_socket_on_Message() will set received_message to 2 when caption message received
+      jpeg_timeout_counter = 0
       while received_message == 0 do
         LrTasks.sleep( 1/2 ) -- seconds
+        jpeg_timeout_counter = jpeg_timeout_counter + 1
+        if jpeg_timeout_counter == 20 then
+          sender:close()
+          return
+        end
       end
       -- Reset message flag
       received_message = 0

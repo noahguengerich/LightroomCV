@@ -58,11 +58,9 @@ local function showCustomDialog()
         local propertyTable = LrBinding.makePropertyTable(context)
         propertyTable.radio_photoSelect = "radio_selected"
         propertyTable.radio_existingTags = "radio_overwrite"
-        propertyTable.slider_accuracy = 2
         propertyTable.enableOK = true
         propertyTable:addObserver("radio_photoSelect", updateStatus)
         propertyTable:addObserver("radio_existingTags", updateStatus)
-        propertyTable:addObserver("slider_accuracy", updateStatus)
         propertyTable:addObserver("enableOK", updateStatus)
 
         -- Defines the UI layout
@@ -119,23 +117,6 @@ local function showCustomDialog()
                         checked_value = "radio_overwrite",
                     },
                 },
-            },
-            f:row {
-                f:group_box {
-                    title = "Model Granularity",
-                    fill_horizontal = 1,
-                    width = myWidth,
-
-                    f:slider {
-                        title = "Accuracy",
-                        value = LrView.bind("slider_accuracy"),
-                        tooltip = "Model accuracy",
-                        min = 1,
-                        max = 3,
-                        integral = true,
-                    },
-                },
-
             },
         }
 
