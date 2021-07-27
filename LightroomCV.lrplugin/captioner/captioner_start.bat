@@ -16,10 +16,8 @@ call %CONDAPATH%\Scripts\activate.bat %ENVPATH%
 
 rem Start captioner
 python %CAPTIONERPATH%\captioner_service.py %CAPTIONERPATH%
-echo %CAPTIONERPATH%
 
 rem Deactivate the environment
 call conda deactivate
 
-pause
 exit
