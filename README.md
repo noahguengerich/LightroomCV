@@ -2,7 +2,7 @@
 
 LightroomCV is an Adobe Lightroom plugin that aids library organization by automatically generating captions for images and applying them to the caption metadata field. The images can then be organized and searched within Lightroom using this generated caption. All processing is done on the local machine and supports either GPU or CPU acceleration.
 
-This plugin implements the *[Show, Attend, and Tell](https://arxiv.org/abs/1502.03044)* image captioning model and was created as a project for ECE 499 at the University of Victoria.
+This plugin implements a ResNet-101 Decoder and an LSTM using the *[Show, Attend, and Tell](https://arxiv.org/abs/1502.03044)* attention mechanism. It was created as a project for ECE 499 at the University of Victoria.
 
 ## Dependencies
 The following dependencies are needed for LightroomCV:
