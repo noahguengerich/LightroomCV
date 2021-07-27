@@ -245,7 +245,7 @@ local function send_socket_send_jpegs(sender, propertyTable)
     jpeg_request_counter = 0
     repeat
       jpeg_request_counter = jpeg_request_counter + 1
-      jpeg = request_jpeg(photo, JPEG[2])
+      jpeg = request_jpeg(photo, 2)
     until not (jpeg == nil) or jpeg_request_counter == 3
     if jpeg == nil then
       back_end.log("jpeg == nil")

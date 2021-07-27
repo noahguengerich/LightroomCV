@@ -3,3 +3,4 @@ LightroomCV.lrplugin/captioner/CAPTION_model_weights.pth.tar
 *.pyc
 *.log
 .vscode/settings.json
+LightroomCV.lrplugin/captioner/other_CAPTION_model_weights.pth.tar

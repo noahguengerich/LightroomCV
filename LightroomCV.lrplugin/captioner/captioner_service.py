@@ -163,7 +163,6 @@ def main(path):
         timer = timer + 1
         caption = receive_message(receive_socket)
         if caption == 'False':
-            print("Caption returned false")
             break
         else:
             send_socket_message(send_socket, caption)
