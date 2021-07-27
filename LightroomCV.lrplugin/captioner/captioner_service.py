@@ -141,7 +141,6 @@ def send_socket_message(s: socket.socket, message: str):
 
 def main(path):
     print('Captioner service started.')
-    print('path: ' + path)
     
     # Start the socket connections
     send_socket = socket_client_send()
