@@ -25,7 +25,7 @@ Not strictly required but greatly improves captioning performance by enabling GP
     `> conda env create -f conda_environment.yml`
 
 3. Open `captioner_start.bat ` and ensure that CONDAPATH and ENVFOLD are correct for your local machine. CONDAPATH is your conda installation location and ENVFOLD is where your environments are stored. 
-4. Download the model weights file (~800 MB) from [here](https://drive.google.com/file/d/1vsgBnBquXhoaDytKR4hMaI0bHtbFyhqA/view?usp=sharing) and put it in the `captioner` folder.
+4. Download the model weights file (~800 MB) from [here](https://drive.google.com/file/d/1IYI2GV6eqdjLy91rmUp_vXCn-c3ietgD/view?usp=sharing) and put it in the `captioner` folder.
 5. Open Lightroom and navigate to the plug-in manager (`ctrl-alt-shift-,` or file -> plug-in manager). Click add and import the LightroomCV.lrplugin folder.
 
 ## Usage
